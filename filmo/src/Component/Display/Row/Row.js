@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 
 // Component
 import axios from '../../../Container/axios/axios'
-// CSS
 
+// CSS
+import './Row.css'
 
 
 const  Row = ({title, fetchURL}) => {
@@ -19,10 +20,21 @@ const  Row = ({title, fetchURL}) => {
         };
         fetchData()
     }, [fetchURL])
+    // Base URL
+    const baseURL = 'https://image.tmdb.org/t/p/original/';
 
     return (
-        <div>
+        <div className="row">
             <h2>{title}</h2>
+            <div className="row__photos">
+                {setMovies.map(ele => (
+                    <img className="row__photo" 
+                        src={`${baseURL}${ele.poster_path || ele.poster_path}`} 
+                         alt={ele.name}
+                         key={ele.id}
+                        />
+                ))}
+            </div>
         </div>
     )
 }
