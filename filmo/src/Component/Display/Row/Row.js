@@ -7,7 +7,7 @@ import axios from '../../../Container/axios/axios'
 import './Row.css'
 
 
-const  Row = ({title, fetchURL}) => {
+const  Row = ({title, fetchURL,isLargeRow}) => {
     // State
     const [setMovies, setMoviesState] = useState([]);
 
@@ -19,9 +19,10 @@ const  Row = ({title, fetchURL}) => {
             return request;
         };
         fetchData()
-    }, [fetchURL])
+    }, [fetchURL]);
+    
     // Base URL
-    const baseURL = 'https://image.tmdb.org/t/p/original/';
+    const imgURL = 'https://image.tmdb.org/t/p/original/';
 
     return (
         <div className="row">
@@ -29,10 +30,10 @@ const  Row = ({title, fetchURL}) => {
             <div className="row__photos">
                 {setMovies.map(ele => (
                     <img className="row__photo" 
-                        src={`${baseURL}${ele.poster_path || ele.poster_path}`} 
-                         alt={ele.name}
-                         key={ele.id}
-                        />
+                        src={`${imgURL}${isLargeRow ?  ele.poster_path: ele.backdrop_path}`} 
+                        alt={ele.name}
+                        key={ele.id}
+                    />
                 ))}
             </div>
         </div>
