@@ -7,17 +7,17 @@ import apiRequest from '../axios/api_Request'
 
 function FilmoBuilder() {
     const movieTitles = [
-        {id: 1 ,title: 'Filmo', fetchURL: apiRequest.fetchFilmo},
-        {id: 2 ,title: 'Trending', fetchURL: apiRequest.fetchTrending},
-        {id: 3 ,title: 'Top Rated', fetchURL: apiRequest.fetchTopRated},
-        {id: 4 ,title: 'Romance', fetchURL: apiRequest.fetchRomanceMovies},
-        {id: 5 ,title: 'Comedy', fetchURL: apiRequest.fetchComedyMovies},
-        {id: 6 ,title: 'Sci-Fi', fetchURL: apiRequest.fetchSciFi},
-        {id: 7 ,title: 'Animation', fetchURL: apiRequest.fetchAnimation},
-        {id: 8 ,title: 'Documentaries', fetchURL: apiRequest.fetchDocumentaries},
-        {id: 9 ,title: 'Horror', fetchURL: apiRequest.fetchHorrorMovies},
-        {id: 10 ,title: 'Mystery', fetchURL: apiRequest.fetchMystery},
-        {id: 11 ,title: 'Western', fetchURL: apiRequest.fetchWestern},
+        {id: 1 ,title: 'Filmo', fetchURL: apiRequest.fetchFilmo, isLargeRow: true},
+        {id: 2 ,title: 'Trending', fetchURL: apiRequest.fetchTrending, isLargeRow:false},
+        {id: 3 ,title: 'Top Rated', fetchURL: apiRequest.fetchTopRated, isLargeRow:false},
+        {id: 4 ,title: 'Romance', fetchURL: apiRequest.fetchRomanceMovies, isLargeRow:false},
+        {id: 5 ,title: 'Comedy', fetchURL: apiRequest.fetchComedyMovies, isLargeRow:false},
+        // {id: 6 ,title: 'Sci-Fi', fetchURL: apiRequest.fetchSciFi, isLargeRow:false},
+        {id: 7 ,title: 'Animation', fetchURL: apiRequest.fetchAnimation, isLargeRow:false},
+        {id: 8 ,title: 'Documentaries', fetchURL: apiRequest.fetchDocumentaries, isLargeRow:false},
+        // {id: 9 ,title: 'Horror', fetchURL: apiRequest.fetchHorrorMovies, isLargeRow:false},
+        // {id: 10 ,title: 'Mystery', fetchURL: apiRequest.fetchMystery, isLargeRow:false},
+        // {id: 11 ,title: 'Western', fetchURL: apiRequest.fetchWestern, isLargeRow:false},
     ]
   return (
     <div>
@@ -25,6 +25,7 @@ function FilmoBuilder() {
           return <Row title={item.title} 
                       fetchURL={item.fetchURL} 
                        key={item.id} 
+                       isLargeRow={item.isLargeRow}
                        />
       })}
     </div>
