@@ -1,0 +1,27 @@
+/* classes */
+.row__photos{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+}
+
+.row__photo{
+    width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    transition:  transform 350ms;
+    margin-right: 10px;
+    opacity: 0.8;
+}
+
+.row__photo:hover{
+    transform: scale(1.18);
+    opacity: 1;
+
+}
+
+/* Hidden scroll bar */
+.row__photos::-webkit-scrollbar{
+    display: none;
+}
