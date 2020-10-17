@@ -36,7 +36,7 @@ const [setTrailerUrl, setTrailerUrlState] = useState('')
         fetchData()
         setInterval(() => {
             fetchData()
-        }, 1000);
+        }, 8000);
     }, [])
 
 
