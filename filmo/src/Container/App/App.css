@@ -7,15 +7,15 @@
 }
 
 .App {
-  background: #232526; /* fallback for old browsers */
+  background: #070707; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to top,
-    #414345,
-    #232526
+    #1f2020,
+    #080808
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
-    #414345,
-    #232526
+    #0f0f0f,
+    #111111
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
